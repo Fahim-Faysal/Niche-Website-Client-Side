@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { FloatingLabel, Form, Button, Alert } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 
 const Login = () => {
       const [logInInfo, setLogInInfo] = useState()
+
+      const history = useHistory()
+      const location = useLocation()
 
       const { user, emailSignIn, error } = useAuth()
 
@@ -20,7 +24,7 @@ const Login = () => {
 
       const handelLoginSubmit = (e) => {
             e.preventDefault()
-            emailSignIn(logInInfo?.email, logInInfo?.password)
+            emailSignIn(logInInfo?.email, logInInfo?.password, history, location)
 
       }
 

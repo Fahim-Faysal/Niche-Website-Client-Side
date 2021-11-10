@@ -6,6 +6,8 @@ import Explore from './pages/Explore/Explore';
 import Home from './pages/Home/Home/Home';
 import Navigation from './pages/Home/Navigation/Navigation';
 import Login from './pages/Login/Login';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import Purchase from './pages/Purchase/Purchase';
 import Register from './pages/Register/Register';
 
 function App() {
@@ -33,6 +35,9 @@ function App() {
             <Route path='/register'>
               <Register></Register>
             </Route>
+            <PrivateRoute path='/purchase/:id'>
+              <Purchase></Purchase>
+            </PrivateRoute>
           </Switch>
         </BrowserRouter>
       </AuthProvider>

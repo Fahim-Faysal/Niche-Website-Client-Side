@@ -2,14 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+
 const Explore = () => {
       const [bikes, setBikes] = useState([])
+
 
       useEffect(() => {
             fetch('http://localhost:4000/bikes')
                   .then(res => res.json())
                   .then(data => setBikes(data))
       }, [])
+
+
       return (
             <div>
 
@@ -27,17 +31,18 @@ const Explore = () => {
                                                       <Card.Text>
                                                             {bike.description}
                                                       </Card.Text>
-                                                      <Link to={`/order/${bike._id}`}>
+                                                      <Link to={`/purchase/${bike._id}`}>
                                                             <Button variant="primary">Buy Now</Button>
                                                       </Link>
                                                 </Card.Body>
                                           </Card>
-
                                     </div>
                               )
+
                         }
 
                   </div>
+
             </div>
       );
 };

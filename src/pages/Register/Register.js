@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { FloatingLabel, Form, Button, Spinner, Alert } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 
 const Register = () => {
 
       const [loginData, setLoginData] = useState({})
+      const history = useHistory()
 
       const { registerWithEmail, error, user, isLoading } = useAuth()
 
@@ -25,7 +27,7 @@ const Register = () => {
                   alert('your password did not match')
                   return
             }
-            registerWithEmail(loginData?.email, loginData?.password)
+            registerWithEmail(loginData?.email, loginData?.password, history)
 
       }
       return (

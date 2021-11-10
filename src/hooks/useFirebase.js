@@ -14,12 +14,13 @@ const useFireabse = () => {
 
       const auth = getAuth();
 
-      const registerWithEmail = (email, password) => {
+      const registerWithEmail = (email, password, history) => {
             setIsLoading(true)
             createUserWithEmailAndPassword(auth, email, password)
                   .then((userCredential) => {
 
                         setError('')
+                        history.replace('/')
                   })
                   .catch((error) => {
 
@@ -29,10 +30,12 @@ const useFireabse = () => {
                   .finally(() => setIsLoading(false));
       }
 
-      const emailSignIn = (email, password) => {
+      const emailSignIn = (email, password, history, location) => {
             setIsLoading(true)
             signInWithEmailAndPassword(auth, email, password)
                   .then((userCredential) => {
+                        const destination = location?.state?.from || '/'
+                        history.replace(destination)
                         setError('')
                   })
                   .catch((error) => {

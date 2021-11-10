@@ -8,8 +8,9 @@ const Product = () => {
       useEffect(() => {
             fetch('http://localhost:4000/bikes')
                   .then(res => res.json())
-                  .then(data => setBikes(data))
+                  .then(data => setBikes(data.slice(0, 6)))
       }, [])
+      console.log(bikes);
 
       return (
             <div>
@@ -28,7 +29,7 @@ const Product = () => {
                                                       <Card.Text>
                                                             {bike.description}
                                                       </Card.Text>
-                                                      <Link to={`/order/${bike._id}`}>
+                                                      <Link to={`/purchase/${bike._id}`}>
                                                             <Button variant="primary">Buy Now</Button>
                                                       </Link>
                                                 </Card.Body>
