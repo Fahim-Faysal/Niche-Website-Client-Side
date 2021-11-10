@@ -1,9 +1,9 @@
 const firebaseConfig = {
-      apiKey: "AIzaSyBup-YR5qIQqbrnBPdu70bENsrMMai-qPw",
-      authDomain: "bike-shop-342a4.firebaseapp.com",
-      projectId: "bike-shop-342a4",
-      storageBucket: "bike-shop-342a4.appspot.com",
-      messagingSenderId: "201430253040",
-      appId: "1:201430253040:web:5b5aa2758fb8b41d9df135"
+      apiKey: process.env.REACT_APP_apiKey,
+      authDomain: process.env.REACT_APP_authDomain,
+      projectId: process.env.REACT_APP_projectId,
+      storageBucket: process.env.REACT_APP_storageBucket,
+      messagingSenderId: process.env.REACT_APP_messagingSenderId,
+      appId: process.env.REACT_APP_appId
 };
 export default firebaseConfig;
