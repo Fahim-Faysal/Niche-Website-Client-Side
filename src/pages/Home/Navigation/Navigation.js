@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
+      const { user, emailSignOut } = useAuth()
       return (
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                   <Container>
@@ -28,9 +30,22 @@ const Navigation = () => {
                                           fontWeight: "bold",
                                           color: "red"
                                     }}>Add A New Package</NavLink>
-
-
                               </Nav>
+
+
+                              {
+                                    user?.email ?
+                                          <Button onClick={emailSignOut} variant="outline-success">LogOut</Button>
+                                          :
+                                          <NavLink className='text-decoration-none mx-4' to='/login'>
+                                                <Button variant="outline-danger "> LogIn
+                                                </Button>
+                                          </NavLink>
+                              }
+
+
+
+
                         </Navbar.Collapse>
                   </Container>
             </Navbar>
