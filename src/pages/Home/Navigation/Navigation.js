@@ -26,10 +26,10 @@ const Navigation = () => {
                                           color: "red"
                                     }}>Add A New Product</NavLink>
 
-                                    <NavLink className='text-decoration-none mx-4' to="/addservice" activeStyle={{
+                                    <NavLink className='text-decoration-none mx-4' to="/dashboard" activeStyle={{
                                           fontWeight: "bold",
                                           color: "red"
-                                    }}>Add A New Package</NavLink>
+                                    }}>Dashboard</NavLink>
                               </Nav>
 
 

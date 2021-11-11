@@ -46,8 +46,9 @@ const Purchase = () => {
                         <input value={user?.displayName} {...register("name")} placeholder='Enter your Name' required />
                         {
                               user?.email &&
-                              <input value={user?.email}  {...register("email")} placeholder="Enter your Email" required />
+                              <input value={user?.email}   {...register("email")} placeholder="Enter your Email" required />
                         }
+
 
 
 
