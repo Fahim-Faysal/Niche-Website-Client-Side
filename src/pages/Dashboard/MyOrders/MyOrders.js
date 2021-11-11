@@ -8,12 +8,15 @@ import axios from 'axios';
 const MyOrders = () => {
       const { user } = useAuth()
       const [myorder, setMyorder] = useState([])
-      const [orders, setOrders] = useState([])
 
-      axios.get(`http://localhost:4000/myorders?email=${user.email}`)
-            .then(function (response) {
-                  setMyorder(response.data);
-            })
+
+      useEffect(() => {
+            axios.get(`http://localhost:4000/myorders?email=${user?.email}`)
+                  .then(function (response) {
+                        setMyorder(response.data);
+                  })
+      }, [])
+
 
       const element = <FontAwesomeIcon icon={faTrashAlt} />
 
@@ -28,8 +31,8 @@ const MyOrders = () => {
                         .then(data => {
                               if (data.deletedCount > 0) {
                                     alert('Deleted Successfully');
-                                    const newUser = orders.filter(order => order._id !== id)
-                                    setOrders(newUser)
+                                    const newUser = myorder?.filter(order => order?._id !== id)
+                                    setMyorder(newUser)
                               }
                         })
             }

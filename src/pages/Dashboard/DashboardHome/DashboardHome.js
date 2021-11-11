@@ -8,9 +8,9 @@ const DashboardHome = () => {
                   <Col sm={2}>
 
                   </Col>
-                  <Col className='dashboard-style' sm={10}>
+                  <Col className='dashboard-style mb-5' sm={10}>
 
-                        <h1 className='text-danger'>Wellcome to Dashboard</h1>
+                        <h1 className='text-danger fw-bold fs-1'>Dashboard</h1>
 
                   </Col>
             </Row>

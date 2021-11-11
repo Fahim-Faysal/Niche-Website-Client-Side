@@ -4,9 +4,11 @@ import AuthProvider from './context/AuthProvider';
 import AddProduct from './pages/AddProduct/AddProduct';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Explore from './pages/Explore/Explore';
+import Footer from './pages/Home/Footer/Footer';
 import Home from './pages/Home/Home/Home';
 import Navigation from './pages/Home/Navigation/Navigation';
 import Login from './pages/Login/Login';
+import NotFound from './pages/NotFound/NotFound';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Purchase from './pages/Purchase/Purchase';
 import Register from './pages/Register/Register';
@@ -42,7 +44,11 @@ function App() {
             <PrivateRoute path='/purchase/:id'>
               <Purchase></Purchase>
             </PrivateRoute>
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
           </Switch>
+
         </BrowserRouter>
       </AuthProvider>
 

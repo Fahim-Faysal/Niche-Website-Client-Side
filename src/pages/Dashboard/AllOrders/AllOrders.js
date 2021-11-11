@@ -1,18 +1,22 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 
 const AllOrders = () => {
 
       const [allorders, setAllorders] = useState([])
-      const [orders, setOrders] = useState([])
 
-      axios.get('http://localhost:4000/orders')
-            .then(function (response) {
-                  setAllorders(response.data);
-            })
+
+      useEffect(() => {
+
+            axios.get('http://localhost:4000/orders')
+                  .then(function (response) {
+                        setAllorders(response.data);
+                  })
+      }, [])
+
       const element = <FontAwesomeIcon icon={faTrashAlt} />
 
       const handelDeleteUser = (id) => {
@@ -26,8 +30,8 @@ const AllOrders = () => {
                         .then(data => {
                               if (data.deletedCount > 0) {
                                     alert('Deleted Successfully');
-                                    const remaining = orders.filter(order => order._id !== id)
-                                    setOrders(remaining)
+                                    const remaining = allorders.filter(order => order._id !== id)
+                                    setAllorders(remaining)
                               }
                         })
             }

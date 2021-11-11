@@ -18,7 +18,7 @@ const Register = () => {
             const newUser = { ...loginData }
             newUser[field] = value;
             setLoginData(newUser)
-            console.log(newUser)
+
       }
 
       const handelFormSubmit = (e) => {

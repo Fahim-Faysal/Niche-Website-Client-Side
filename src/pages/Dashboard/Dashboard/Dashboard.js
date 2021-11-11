@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Nav, Row, Tab } from 'react-bootstrap';
+import { Col, Nav, Row, Tab, Button } from 'react-bootstrap';
 import { NavLink as Link } from 'react-router-dom';
 import {
       BrowserRouter as Router,
@@ -15,38 +15,48 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import MyOrders from '../MyOrders/MyOrders';
 
 import Pay from '../Pay/Pay';
+import Review from '../Review/Review';
 
 const Dashboard = () => {
       let { path, url } = useRouteMatch();
-      const { admin } = useAuth()
+      const { admin, emailSignOut } = useAuth()
       return (
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                   <Row>
-                        <Col sm={2}>
+                        <Col className='mt-5' sm={2}>
                               <Nav variant="pills" className="flex-column">
 
-                                    <Nav.Item>
-                                          <Link to={`${url}/pay`}>Pay</Link>
+                                    <Nav.Item className='fs-4'>
+                                          <Link className='text-decoration-none ' to={`${url}/pay`}>Pay</Link>
                                     </Nav.Item>
                                     {admin &&
-                                          <Nav.Item>
-                                                <Link to={`${url}/makeadmin`}>Make Admin</Link>
+                                          <Nav.Item className='mt-3 fs-4'>
+                                                <Link className='text-decoration-none ' to={`${url}/makeadmin`}>Make Admin</Link>
                                           </Nav.Item>
                                     }
-                                    <Nav.Item>
-                                          <Link to={`${url}/myorder`}>My Orders</Link>
+                                    <Nav.Item className='mt-3 fs-4'>
+                                          <Link className='text-decoration-none ' to={`${url}/myorder`}>My Orders</Link>
+                                    </Nav.Item >
+                                    {
+                                          admin &&
+                                          <Nav.Item className='mt-3 fs-4'>
+                                                <Link className='text-decoration-none ' to={`${url}/allorder`}>Manage All Orders</Link>
+                                          </Nav.Item>
+                                    }
+                                    <Nav.Item className='mt-3 fs-4'>
+                                          <Link className='text-decoration-none ' to={`${url}/review`}>Review</Link>
                                     </Nav.Item>
-                                    <Nav.Item>
-                                          <Link to={`${url}/allorder`}>Manage All Orders</Link>
-                                    </Nav.Item>
+                                    <Button className='w-50 mx-auto mt-5' onClick={emailSignOut} variant="danger">Logout</Button>
+
 
                               </Nav>
                         </Col>
                         <Col sm={10}>
+                              <DashboardHome></DashboardHome>
                               <Switch>
-                                    <Route exact path={path}>
+                                    {/* <Route exact path={path}>
                                           <DashboardHome></DashboardHome>
-                                    </Route>
+                                    </Route> */}
                                     <Route path={`${path}/pay`}>
                                           <Pay></Pay>
                                     </Route>
@@ -58,6 +68,9 @@ const Dashboard = () => {
                                     </Route>
                                     <Route path={`${path}/allorder`}>
                                           <AllOrders></AllOrders>
+                                    </Route>
+                                    <Route path={`${path}/review`}>
+                                          <Review></Review>
                                     </Route>
                               </Switch>
                               {/* <Tab.Content>

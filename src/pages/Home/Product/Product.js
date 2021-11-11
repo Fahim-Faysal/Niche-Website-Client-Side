@@ -20,9 +20,9 @@ const Product = () => {
                   <div className='row container ms-5 '>
                         {
                               bikes.map(bike =>
-                                    <div className='col-lg-4 col-md-6 col-sm-12'>
+                                    <div key={bike._id} className='col-lg-4 col-md-6 col-sm-12 my-3'>
 
-                                          <Card key={bike._id} style={{ width: '18rem' }}>
+                                          <Card style={{ width: '18rem' }}>
                                                 <Card.Img variant="top" src={bike.img} />
                                                 <Card.Body>
                                                       <Card.Title>{bike.name}</Card.Title>

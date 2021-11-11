@@ -17,7 +17,7 @@ const Purchase = () => {
       }, [])
 
       const onSubmit = data => {
-            console.log(data);
+
             axios.post('http://localhost:4000/orders', data)
                   .then(res => {
                         if (res.data.insertedId) {
