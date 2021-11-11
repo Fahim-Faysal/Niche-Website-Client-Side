@@ -27,7 +27,7 @@ const Register = () => {
                   alert('your password did not match')
                   return
             }
-            registerWithEmail(loginData?.email, loginData?.password, history)
+            registerWithEmail(loginData?.email, loginData?.password, loginData?.name, history)
 
       }
       return (

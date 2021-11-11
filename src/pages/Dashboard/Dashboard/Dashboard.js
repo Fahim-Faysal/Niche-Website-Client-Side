@@ -8,6 +8,7 @@ import {
       useParams,
       useRouteMatch
 } from "react-router-dom";
+import useAuth from '../../../hooks/useAuth';
 import AllOrders from '../AllOrders/AllOrders';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -17,6 +18,7 @@ import Pay from '../Pay/Pay';
 
 const Dashboard = () => {
       let { path, url } = useRouteMatch();
+      const { admin } = useAuth()
       return (
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                   <Row>
@@ -26,9 +28,11 @@ const Dashboard = () => {
                                     <Nav.Item>
                                           <Link to={`${url}/pay`}>Pay</Link>
                                     </Nav.Item>
-                                    <Nav.Item>
-                                          <Link to={`${url}/makeadmin`}>Make Admin</Link>
-                                    </Nav.Item>
+                                    {admin &&
+                                          <Nav.Item>
+                                                <Link to={`${url}/makeadmin`}>Make Admin</Link>
+                                          </Nav.Item>
+                                    }
                                     <Nav.Item>
                                           <Link to={`${url}/myorder`}>My Orders</Link>
                                     </Nav.Item>

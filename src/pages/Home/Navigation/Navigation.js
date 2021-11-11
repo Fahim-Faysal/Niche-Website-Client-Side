@@ -43,8 +43,10 @@ const Navigation = () => {
                                           </NavLink>
                               }
 
-
-
+                              {user?.email &&
+                                    <Navbar.Text className='text-danger'>
+                                          Wellcome :  {user?.displayName}
+                                    </Navbar.Text>}
 
                         </Navbar.Collapse>
                   </Container>
