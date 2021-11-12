@@ -11,7 +11,7 @@ const AllOrders = () => {
 
       useEffect(() => {
 
-            axios.get('http://localhost:4000/orders')
+            axios.get('https://immense-reaches-13014.herokuapp.com/orders')
                   .then(function (response) {
                         setAllorders(response.data);
                   })
@@ -22,7 +22,7 @@ const AllOrders = () => {
       const handelDeleteUser = (id) => {
             const proceed = window.confirm('Are You Sure You Want To Delete')
             if (proceed) {
-                  const url = `http://localhost:4000/orders/${id}`
+                  const url = `https://immense-reaches-13014.herokuapp.com/orders/${id}`
                   fetch(url, {
                         method: "DELETE"
                   })
@@ -38,34 +38,37 @@ const AllOrders = () => {
       }
 
       return (
-            <Table striped bordered hover size="sm">
-                  <thead>
-                        <tr>
-                              <th>Name</th>
-                              <th>Email</th>
-                              <th>Bike Name</th>
-                              <th>City</th>
-                              <th>Address</th>
-                              <th>Phone</th>
-                        </tr>
-                  </thead>
-                  <tbody>
-                        {
-                              allorders.map(order => <tr key={order._id}>
-                                    <td>{order?.name}</td>
-                                    <td>{order?.email}</td>
-                                    <td>{order?.bikename}</td>
-                                    <td>{order?.city}</td>
-                                    <td>{order?.address}</td>
-                                    <td>{order?.phone}</td>
-                                    <button onClick={() => handelDeleteUser(order._id)}><span className='text-danger'>{element}</span></button>
-                              </tr>)
+            <div>
+                  <h1 className='text-warning mb-3'>All Placed Orders</h1>
+                  <Table striped bordered hover size="sm">
+                        <thead>
+                              <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Bike Name</th>
+                                    <th>City</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                              {
+                                    allorders.map(order => <tr key={order._id}>
+                                          <td>{order?.name}</td>
+                                          <td>{order?.email}</td>
+                                          <td>{order?.bikename}</td>
+                                          <td>{order?.city}</td>
+                                          <td>{order?.address}</td>
+                                          <td>{order?.phone}</td>
+                                          <button onClick={() => handelDeleteUser(order._id)}><span className='text-danger'>{element}</span></button>
+                                    </tr>)
 
-                        }
+                              }
 
 
-                  </tbody>
-            </Table>
+                        </tbody>
+                  </Table>
+            </div>
       );
 };
 

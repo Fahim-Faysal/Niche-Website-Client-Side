@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
+import RubberBand from 'react-reveal/RubberBand';
+
+
 
 const MakeAdmin = () => {
       const [email, setEmail] = useState('')
@@ -10,7 +13,7 @@ const MakeAdmin = () => {
       }
       const handelAdminSubmit = (e) => {
             const user = { email }
-            fetch('http://localhost:4000/users/admin', {
+            fetch('https://immense-reaches-13014.herokuapp.com/users/admin', {
                   method: 'PUT',
                   headers: {
                         'content-type': 'application/json'
@@ -29,14 +32,16 @@ const MakeAdmin = () => {
       }
       return (
             <div>
-                  <h1>Make an Admin</h1>
-                  <Form onSubmit={handelAdminSubmit}>
-                        <Form.Group className="mb-3 w-50 mx-auto" controlId="formBasicEmail">
-                              <Form.Label>Email address</Form.Label>
-                              <Form.Control onBlur={handelOnBlur} type="email" placeholder="Enter email" />
-                        </Form.Group>
-                        <Button type='submit' variant="danger">Make Admin</Button>
-                  </Form>
+                  <h1 className='text-warning mb-3'>Make an Admin</h1>
+                  <RubberBand>
+                        <Form onSubmit={handelAdminSubmit}>
+                              <Form.Group className="mb-3 w-50 mx-auto" controlId="formBasicEmail">
+                                    <Form.Label>Email address</Form.Label>
+                                    <Form.Control onBlur={handelOnBlur} type="email" placeholder="Enter email" />
+                              </Form.Group>
+                              <Button type='submit' variant="danger">Make Admin</Button>
+                        </Form>
+                  </RubberBand>
                   {
                         success &&
                         <Alert className='w-25 mx-auto mt-5' variant='success'>

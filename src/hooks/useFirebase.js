@@ -67,7 +67,7 @@ const useFireabse = () => {
       }, [])
 
       useEffect(() => {
-            fetch(`http://localhost:4000/user/${user?.email}`)
+            fetch(`https://immense-reaches-13014.herokuapp.com/user/${user?.email}`)
                   .then(res => res.json())
                   .then(data => setAdmin(data.admin))
       }, [user.email])
@@ -83,7 +83,7 @@ const useFireabse = () => {
       }
       const saveUser = (email, displayName) => {
             const user = { email, displayName };
-            fetch('http://localhost:4000/users', {
+            fetch('https://immense-reaches-13014.herokuapp.com/users', {
                   method: 'POST',
                   headers: {
                         'content-type': 'application/json'

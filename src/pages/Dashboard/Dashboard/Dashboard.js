@@ -9,6 +9,7 @@ import {
       useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../hooks/useAuth';
+import AddProduct from '../../AddProduct/AddProduct';
 import AllOrders from '../AllOrders/AllOrders';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -43,6 +44,12 @@ const Dashboard = () => {
                                                 <Link className='text-decoration-none ' to={`${url}/allorder`}>Manage All Orders</Link>
                                           </Nav.Item>
                                     }
+                                    {
+                                          admin &&
+                                          <Nav.Item className='mt-3 fs-4'>
+                                                <Link className='text-decoration-none ' to={`${url}/addproduct`}>Add A New Product</Link>
+                                          </Nav.Item>
+                                    }
                                     <Nav.Item className='mt-3 fs-4'>
                                           <Link className='text-decoration-none ' to={`${url}/review`}>Review</Link>
                                     </Nav.Item>
@@ -68,6 +75,9 @@ const Dashboard = () => {
                                     </Route>
                                     <Route path={`${path}/allorder`}>
                                           <AllOrders></AllOrders>
+                                    </Route>
+                                    <Route path={`${path}/addproduct`}>
+                                          <AddProduct></AddProduct>
                                     </Route>
                                     <Route path={`${path}/review`}>
                                           <Review></Review>

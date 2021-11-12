@@ -7,13 +7,10 @@ const PublicReview = () => {
       const [reviews, setreviews] = useState([])
 
       useEffect(() => {
-            fetch('http://localhost:4000/review')
+            fetch('https://immense-reaches-13014.herokuapp.com/review')
                   .then(res => res.json())
                   .then(data => setreviews(data))
-            // axios.get('http://localhost:4000/review')
-            //       .then(function (response) {
-            //             setreviews(response);
-            //       })
+
       }, [])
       return (
             <div className='mt-5 container'>

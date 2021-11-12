@@ -11,7 +11,7 @@ const MyOrders = () => {
 
 
       useEffect(() => {
-            axios.get(`http://localhost:4000/myorders?email=${user?.email}`)
+            axios.get(`https://immense-reaches-13014.herokuapp.com/myorders?email=${user?.email}`)
                   .then(function (response) {
                         setMyorder(response.data);
                   })
@@ -23,7 +23,7 @@ const MyOrders = () => {
       const handelDeleteUser = (id) => {
             const proceed = window.confirm('Are You Sure You Want To Delete')
             if (proceed) {
-                  const url = `http://localhost:4000/orders/${id}`
+                  const url = `https://immense-reaches-13014.herokuapp.com/orders/${id}`
                   fetch(url, {
                         method: "DELETE"
                   })
@@ -38,32 +38,35 @@ const MyOrders = () => {
             }
       }
       return (
-            <Table striped bordered hover size="sm">
-                  <thead>
-                        <tr>
-                              <th>Name</th>
-                              <th>Email</th>
-                              <th>Bike Name</th>
-                              <th>City</th>
-                              <th>Address</th>
-                              <th>Phone</th>
-                        </tr>
-                  </thead>
-                  <tbody>
+            <div>
+                  <h1 className='text-success mb-3'>All My Orders</h1>
+                  <Table striped bordered hover size="sm">
+                        <thead>
+                              <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Bike Name</th>
+                                    <th>City</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                              </tr>
+                        </thead>
+                        <tbody>
 
-                        {
-                              myorder.map(order => <tr key={order._id}>
-                                    <td>{order?.name}</td>
-                                    <td>{order?.email}</td>
-                                    <td>{order?.bikename}</td>
-                                    <td>{order?.city}</td>
-                                    <td>{order?.address}</td>
-                                    <td>{order?.phone}</td>
-                                    <button onClick={() => handelDeleteUser(order._id)}><span className='text-danger'>{element}</span></button>
-                              </tr>)
-                        }
-                  </tbody>
-            </Table>
+                              {
+                                    myorder.map(order => <tr key={order._id}>
+                                          <td>{order?.name}</td>
+                                          <td>{order?.email}</td>
+                                          <td>{order?.bikename}</td>
+                                          <td>{order?.city}</td>
+                                          <td>{order?.address}</td>
+                                          <td>{order?.phone}</td>
+                                          <button onClick={() => handelDeleteUser(order._id)}><span className='text-danger'>{element}</span></button>
+                                    </tr>)
+                              }
+                        </tbody>
+                  </Table>
+            </div>
       );
 };
 
