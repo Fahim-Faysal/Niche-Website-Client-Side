@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import Rating from 'react-rating';
 
 const PublicReview = () => {
 
@@ -26,12 +27,15 @@ const PublicReview = () => {
 
                                           <Card.Body>
                                                 <Card.Title className='text-danger'>{review?.name}</Card.Title>
-                                                <Card.Text>
-                                                      {review?.email}
-                                                </Card.Text>
+
                                                 <Card.Text className='text-success'>
                                                       {review?.review}
                                                 </Card.Text>
+                                                <Rating className='text-warning'
+                                                      initialRating={review?.rating}
+                                                      emptySymbol="far fa-star"
+                                                      fullSymbol="fas fa-star"
+                                                />
                                           </Card.Body>
 
                                     </Card>

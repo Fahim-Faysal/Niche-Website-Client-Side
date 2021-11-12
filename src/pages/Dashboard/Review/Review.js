@@ -17,6 +17,7 @@ const Review = () => {
             const newReview = { ...reviews }
             newReview[field] = value;
             setReviews(newReview)
+            console.log(newReview)
 
       }
 
@@ -55,6 +56,10 @@ const Review = () => {
                               <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label>Email</Form.Label>
                                     <Form.Control onBlur={handelBlur} defaultValue={user?.email} type="email" name="email" placeholder="name@example.com" />
+                              </Form.Group>
+                              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                    <Form.Label>Please Give a Rating </Form.Label>
+                                    <Form.Control onBlur={handelBlur} defaultValue={user?.email} type="number" name="rating" placeholder="Rating Must Be Between 0-5" />
                               </Form.Group>
                               <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                     <Form.Label>Write Your Review</Form.Label>
