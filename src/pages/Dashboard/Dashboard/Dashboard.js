@@ -5,7 +5,6 @@ import {
       BrowserRouter as Router,
       Switch,
       Route,
-      useParams,
       useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../hooks/useAuth';
@@ -61,9 +60,7 @@ const Dashboard = () => {
                         <Col sm={10}>
                               <DashboardHome></DashboardHome>
                               <Switch>
-                                    {/* <Route exact path={path}>
-                                          <DashboardHome></DashboardHome>
-                                    </Route> */}
+
                                     <Route path={`${path}/pay`}>
                                           <Pay></Pay>
                                     </Route>
@@ -83,14 +80,7 @@ const Dashboard = () => {
                                           <Review></Review>
                                     </Route>
                               </Switch>
-                              {/* <Tab.Content>
-                                    <Tab.Pane eventKey="first">
-                                          <Pay></Pay>
-                                    </Tab.Pane>
-                                    <Tab.Pane eventKey="second">
-                                          <h2>Fahim </h2>
-                                    </Tab.Pane>
-                              </Tab.Content> */}
+
                         </Col>
                   </Row>
 

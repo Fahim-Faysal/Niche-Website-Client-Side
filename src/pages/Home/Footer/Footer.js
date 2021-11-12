@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGoogle, faInstagram, faTwitch, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom';
+import { faGoogle, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+
 
 const Footer = () => {
       return (
@@ -10,7 +10,7 @@ const Footer = () => {
                   <div className='row bg-info p-5 mt-5 d-flex justify-content-center'>
 
                         <div className=' col-lg-4 col-md-6 col-12'>
-                              <h3>Faysal Travel Agency</h3>
+                              <h3>Siyam'S Mart</h3>
                               <p>Mobile : <small>01785448325</small></p>
                         </div>
                         <div className=' col-lg-4 col-md-6 col-12'>
@@ -21,7 +21,7 @@ const Footer = () => {
                         </div>
                         <div className='col-lg-4 col-md-6 col-12 '>
                               <h5>Social Media Links</h5>
-                              {/* <input type="text" placeholder='Enter your Email' /> */}
+
                               <span className='me-3 size fs-3'><FontAwesomeIcon icon={faYoutube} /></span>
                               <span className='me-3 size fs-3'><FontAwesomeIcon icon={faGoogle} /></span>
                               <span className='me-3 size fs-3'><FontAwesomeIcon icon={faTwitter} /></span>

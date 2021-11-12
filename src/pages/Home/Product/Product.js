@@ -12,7 +12,7 @@ const Product = () => {
                   .then(res => res.json())
                   .then(data => setBikes(data.slice(0, 6)))
       }, [])
-      console.log(bikes);
+
 
       return (
             <div>

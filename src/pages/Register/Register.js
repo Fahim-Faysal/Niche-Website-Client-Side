@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FloatingLabel, Form, Button, Spinner, Alert } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 
