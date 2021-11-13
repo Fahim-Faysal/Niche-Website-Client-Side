@@ -1,6 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthProvider';
+import AboutUs from './pages/AboutUs/AboutUs';
 import AddProduct from './pages/AddProduct/AddProduct';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Explore from './pages/Explore/Explore';
@@ -44,6 +45,9 @@ function App() {
             <PrivateRoute path='/purchase/:id'>
               <Purchase></Purchase>
             </PrivateRoute>
+            <Route path='/about'>
+              <AboutUs></AboutUs>
+            </Route>
             <Route path='*'>
               <NotFound></NotFound>
             </Route>

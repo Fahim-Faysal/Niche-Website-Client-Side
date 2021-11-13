@@ -22,10 +22,17 @@ const Navigation = () => {
                                     }}>Explore</NavLink>
 
 
-                                    <NavLink className='text-decoration-none mx-4' to="/dashboard" activeStyle={{
+                                    {
+                                          user?.email &&
+                                          <NavLink className='text-decoration-none mx-4' to="/dashboard" activeStyle={{
+                                                fontWeight: "bold",
+                                                color: "red"
+                                          }}>Dashboard</NavLink>
+                                    }
+                                    <NavLink className='text-decoration-none mx-4' to="/about" activeStyle={{
                                           fontWeight: "bold",
                                           color: "red"
-                                    }}>Dashboard</NavLink>
+                                    }}>About Us</NavLink>
                               </Nav>
 
 
