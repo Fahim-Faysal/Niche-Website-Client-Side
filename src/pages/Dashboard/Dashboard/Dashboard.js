@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import useAuth from '../../../hooks/useAuth';
 import AddProduct from '../../AddProduct/AddProduct';
+import AdminRoute from '../../AdminRoute/AdminRoute';
 import AllOrders from '../AllOrders/AllOrders';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -71,21 +72,21 @@ const Dashboard = () => {
                                     <Route path={`${path}/pay`}>
                                           <Pay></Pay>
                                     </Route>
-                                    <Route path={`${path}/makeadmin`}>
+                                    <AdminRoute path={`${path}/makeadmin`}>
                                           <MakeAdmin></MakeAdmin>
-                                    </Route>
+                                    </AdminRoute>
                                     <Route path={`${path}/myorder`}>
                                           <MyOrders></MyOrders>
                                     </Route>
-                                    <Route path={`${path}/allorder`}>
+                                    <AdminRoute path={`${path}/allorder`}>
                                           <AllOrders></AllOrders>
-                                    </Route>
-                                    <Route path={`${path}/addproduct`}>
+                                    </AdminRoute>
+                                    <AdminRoute path={`${path}/addproduct`}>
                                           <AddProduct></AddProduct>
-                                    </Route>
-                                    <Route path={`${path}/manageproduct`}>
+                                    </AdminRoute>
+                                    <AdminRoute path={`${path}/manageproduct`}>
                                           <ManageProduct></ManageProduct>
-                                    </Route>
+                                    </AdminRoute>
                                     <Route path={`${path}/review`}>
                                           <Review></Review>
                                     </Route>
