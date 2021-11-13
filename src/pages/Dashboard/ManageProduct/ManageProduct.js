@@ -37,7 +37,7 @@ const ManageProduct = () => {
       return (
             <div>
                   <Bounce>
-                        <h1 className='text-success mt-5 mb-5 fw-bolder'>Explore Our All Bikes And Choose Yours</h1>
+                        <h1 className='text-success mt-5 mb-5 fw-bolder'>Delete a Product</h1>
                   </Bounce>
 
                   <div className='row container ms-5 '>
