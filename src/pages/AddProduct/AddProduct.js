@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Jump from 'react-reveal/Jump';
 import './AddProduct.css'
@@ -21,24 +22,33 @@ const AddProduct = () => {
       return (
             <div>
 
-                  <h1 className=' mt-5 text-info'>Add A Product</h1>
-                  <Jump>
-                        <form className='form-container mt-5' onSubmit={handleSubmit(onSubmit)}>
+                  <h1 className=' mt-2 text-info'>Add A Product</h1>
+                  <Container>
+                        <Jump >
+                              <Row style={{ display: 'flex', justifyContent: 'center', }}>
+                                    <Col xs={12} sm={12} md={12} lg={8}>
 
+                                          <form className='mt-3' onSubmit={handleSubmit(onSubmit)}>
 
-                              <input  {...register("name")} placeholder='Enter the Bike name' />
+                                                <input className='w-75 m-2'  {...register("name")} placeholder='Enter the Bike name' />
+                                                <br />
 
-                              <input  {...register("description")} placeholder="Enter the Description" />
+                                                <input className='w-75 m-2'  {...register("description")} placeholder="Enter the Description" />
+                                                <br />
+                                                <input className='w-75 m-2' type="number" {...register("price")} placeholder='Enter the price' />
+                                                <br />
+                                                <input className='w-75 m-2' {...register("color")} placeholder="color" />
+                                                <br />
+                                                <input className='w-75 m-2' {...register("img")} placeholder='Paste the image url' />
+                                                <br />
+                                                <input className=' w-75 m-2 btn btn-danger' value='Add Product' type="submit" />
+                                          </form>
 
-                              <input type="number" {...register("price")} placeholder='Enter the price' />
+                                    </Col>
+                              </Row>
+                        </Jump>
+                  </Container>
 
-                              <input {...register("color")} placeholder="color" />
-
-                              <input {...register("img")} placeholder='Paste the image url' />
-
-                              <input className='btn btn-danger' value='Add Product' type="submit" />
-                        </form>
-                  </Jump>
 
             </div>
       );

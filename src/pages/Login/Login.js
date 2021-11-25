@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FloatingLabel, Form, Button, Alert } from 'react-bootstrap';
+import { FloatingLabel, Form, Button, Alert, Container, Row, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
@@ -31,27 +31,33 @@ const Login = () => {
       return (
             <div className='mt-5'>
                   <h1 className='text-info'>Please Login Here</h1>
-                  <Form onSubmit={handelLoginSubmit} className='w-25 p-5 border border-secondary rounded mt-5 mx-auto'>
-                        <FloatingLabel
-                              controlId="floatingInput"
-                              label="Email address"
-                              className="mb-3"
-                        >
-                              <Form.Control onBlur={handelOnBlur} type="email"
-                                    name='email' placeholder="name@example.com" />
-                        </FloatingLabel>
-                        <FloatingLabel controlId="floatingPassword" label="Password">
-                              <Form.Control onBlur={handelOnBlur} type="password" name='password' placeholder="Password" />
-                        </FloatingLabel>
+                  <Container>
+                        <Row style={{ display: 'flex', justifyContent: 'center' }}>
+                              <Col style={{ display: 'flex', justifyContent: 'center' }} xs={12} sm={12} md={12} lg={8}>
+                                    <Form onSubmit={handelLoginSubmit} className='w-75 p-5 border border-secondary rounded mt-5'>
+                                          <FloatingLabel
+                                                controlId="floatingInput"
+                                                label="Email address"
+                                                className="mb-3"
+                                          >
+                                                <Form.Control onBlur={handelOnBlur} type="email"
+                                                      name='email' placeholder="name@example.com" />
+                                          </FloatingLabel>
+                                          <FloatingLabel controlId="floatingPassword" label="Password">
+                                                <Form.Control onBlur={handelOnBlur} type="password" name='password' placeholder="Password" />
+                                          </FloatingLabel>
 
-                        <Button className='mt-3' type='submit' variant="danger">Login</Button>
-                  </Form>
-                  {
+                                          <Button className='mt-3' type='submit' variant="danger">Login</Button>
+                                    </Form>
+                              </Col>
+                        </Row>
+                  </Container>
+                  {/* {
                         user.email &&
                         <Alert className='w-25 mx-auto mt-5' variant='success'>
                               Login Successfully !!
                         </Alert>
-                  }
+                  } */}
                   {
                         error &&
                         <Alert className='w-25 mt-5 mx-auto' variant="success">

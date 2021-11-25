@@ -6,7 +6,7 @@ const AboutUs = () => {
                   <h1 className='text-success m-5'>About Siyam's Mart</h1>
                   <div class="container">
                         <div class="row row-col-6">
-                              <div class="col">
+                              <div class="col-sm-12 col-md-6">
                                     <p>
                                           Siyam'S Mart A motorcycle, often called a motorbike, bike, or cycle, is a two- or three-wheeled motor vehicle. Motorcycle design varies greatly to suit a range of different purposes: long-distance travel, commuting, cruising, sport (including racing), and off-road riding. Motorcycling is riding a motorcycle and being involved in other related social activity such as joining a motorcycle club and attending motorcycle rallies.
 
