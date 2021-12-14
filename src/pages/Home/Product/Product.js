@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Zoom, Slide } from 'react-reveal';
+import './Product.css'
 
 
 const Product = () => {
@@ -12,7 +13,6 @@ const Product = () => {
                   .then(res => res.json())
                   .then(data => setBikes(data.slice(0, 6)))
       }, [])
-
 
       return (
             <div>
@@ -28,8 +28,8 @@ const Product = () => {
 
                                           <Col style={{ display: 'flex', justifyContent: 'center' }} sm={12} md={6} lg={4}>
                                                 <Zoom>
-                                                      <Card style={{ width: '18rem', margin: '5px' }}>
-                                                            <Card.Img variant="top" src={bike.img} />
+                                                      <Card className='card' style={{ width: '18rem', margin: '5px' }}>
+                                                            <Card.Img className='image' variant="top" src={bike.img} />
                                                             <Card.Body>
                                                                   <Card.Title>{bike.name}</Card.Title>
                                                                   <Card.Text>
