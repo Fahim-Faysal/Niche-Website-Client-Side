@@ -7,7 +7,7 @@ const Footer = () => {
       return (
             <div>
 
-                  <div className='row bg-info p-5 mt-5 d-flex justify-content-center'>
+                  <div className='row p-5 mt-5 d-flex justify-content-center' style={{ backgroundColor: '#E6E6FA' }}>
 
                         <div className=' col-lg-4 col-md-6 col-12'>
                               <h3>Siyam'S Mart</h3>

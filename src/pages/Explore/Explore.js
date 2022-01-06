@@ -27,7 +27,7 @@ const Explore = () => {
                               bikes.map(bike =>
                                     <div className='col-lg-4 col-md-6 col-sm-12 my-3'>
                                           <Zoom>
-                                                <Card className='card' key={bike._id} style={{ width: '18rem' }}>
+                                                <Card className='card shadow-lg rounded' key={bike._id} style={{ width: '18rem' }}>
                                                       <Card.Img className='image' variant="top" src={bike.img} />
                                                       <Card.Body>
                                                             <Card.Title>{bike.name}</Card.Title>

@@ -45,7 +45,7 @@ const ManageProduct = () => {
                               bikes.map(bike =>
                                     <div className='col-lg-4 col-md-6 col-sm-12 my-3'>
                                           <Zoom>
-                                                <Card key={bike._id} style={{ width: '18rem' }}>
+                                                <Card className='shadow-lg rounded' key={bike._id} style={{ width: '18rem' }}>
                                                       <Card.Img variant="top" src={bike.img} />
                                                       <Card.Body>
                                                             <Card.Title>{bike.name}</Card.Title>

@@ -28,7 +28,7 @@ const Product = () => {
 
                                           <Col style={{ display: 'flex', justifyContent: 'center' }} sm={12} md={6} lg={4}>
                                                 <Zoom>
-                                                      <Card className='card' style={{ width: '18rem', margin: '5px' }}>
+                                                      <Card className='card shadow-lg rounded' style={{ width: '18rem', margin: '5px' }}>
                                                             <Card.Img className='image' variant="top" src={bike.img} />
                                                             <Card.Body>
                                                                   <Card.Title>{bike.name}</Card.Title>
