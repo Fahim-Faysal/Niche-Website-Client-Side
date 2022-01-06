@@ -25,8 +25,8 @@ const Dashboard = () => {
       return (
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                   <Row>
-                        <Col className='mt-5' sm={2}>
-                              <Nav variant="pills" className="flex-column">
+                        <Col sm={2}>
+                              <Nav variant="pills" style={{ height: '100vh', backgroundColor: '#FFFAF0' }} className="flex-column">
 
                                     {!admin && <Nav.Item className='fs-4'>
                                           <Link className='text-decoration-none ' to={`${url}/pay`}>Pay</Link>
